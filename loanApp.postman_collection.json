@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "4224a382-89ed-4de1-aabf-1cadf7230871",
+		"name": "loanApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2462044"
+	},
+	"item": [
+		{
+			"name": "loan",
+			"item": [
+				{
+					"name": "create-loan",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\":1,\n    \"amount\":\"36\",\n    \"interestRate\":\"0.4\",\n    \"numberOfInstallment\":6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8061/api/loan/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8061",
+							"path": [
+								"api",
+								"loan",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-loans",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8061/api/loan/list/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8061",
+							"path": [
+								"api",
+								"loan",
+								"list",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-installments-of-loan",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8061/api/loan/installments/1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8061",
+							"path": [
+								"api",
+								"loan",
+								"installments",
+								"1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-loan",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payAmount\":\"10.00\",\n    \"loanId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8061/api/loan/pay",
+							"host": [
+								"localhost"
+							],
+							"port": "8061",
+							"path": [
+								"api",
+								"loan",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": []
+		}
+	]
+}
